@@ -1,13 +1,12 @@
-<section class="skills section" id="skills" aria-labelledby="skills-title">
-  <h2 id="skills-title">Skills</h2>
-  <div class="chips panel">
-    <button *ngFor="let s of skills" class="chip" aria-pressed="false">{{s.name}}</button>
+<section class="skills section" role="region" aria-label="Skills">
+  <h2>Skills</h2>
+  <div class="tags">
+    <span *ngFor="let s of skills" class="tag">{{s.name}}</span>
   </div>
-  <div class="bars">
-    <div *ngFor="let s of skills" class="bar-row">
-      <div class="label">{{s.name}}</div>
-      <div class="bar" aria-hidden="true"><div class="fill" [attr.data-level]="s.level" style="width:0"></div></div>
-      <div class="percent">{{s.level}}%</div>
+  <div class="list">
+    <div *ngFor="let s of skills" class="skill">
+      <div class="meta"><strong>{{s.name}}</strong><span>{{s.pct}}%</span></div>
+      <div class="bar"><i [attr.data-value]="s.pct"></i></div>
     </div>
   </div>
 </section>

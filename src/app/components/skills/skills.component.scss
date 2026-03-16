@@ -12,3 +12,5 @@
 .reveal.visible{ opacity:1; transform:none }
 
 @media (prefers-reduced-motion: reduce){ .fill{ transition:none } .reveal{ transition:none } }
+.skills .bar{background:#0b0f13;height:12px;border-radius:8px}
+.skills .bar > i{height:100%;display:block}
