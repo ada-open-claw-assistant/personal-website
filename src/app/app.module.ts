@@ -10,7 +10,11 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule

@@ -1,9 +1,14 @@
 :host{ display:block; padding:2rem; max-width:900px; margin:0 auto; }
 .chips{ margin-bottom:1rem; }
-.chip{ display:inline-block; background:#eef; color:#033; padding:6px 10px; border-radius:999px; margin:4px; }
-.bar-row{ display:flex; align-items:center; gap:12px; margin:8px 0; }
-.label{width:110px}
-.bar{ flex:1; background:#eee; height:12px; border-radius:6px; overflow:hidden }
-.fill{ background:linear-gradient(90deg,#1976d2,#4fc3f7); height:100%; transition:width 900ms ease-out }
-.percent{ width:48px; text-align:right }
-@media (prefers-reduced-motion: reduce){ .fill{ transition:none } }
+.chip{ display:inline-block; background:rgba(255,255,255,0.04); color:var(--muted); padding:6px 10px; border-radius:999px; margin:4px; }
+.bar-row{ display:flex; align-items:center; gap:12px; margin:12px 0; }
+.label{width:110px;font-weight:600;color:var(--muted)}
+.bar{ flex:1; background:linear-gradient(90deg,#06101a, rgba(255,255,255,0.02)); height:14px; border-radius:999px; overflow:hidden }
+.fill{ background:var(--accent-grad); height:100%; width:0; transition:width 900ms cubic-bezier(.2,.9,.2,1); box-shadow:0 6px 18px rgba(96,165,250,0.08) inset }
+.percent{ width:48px; text-align:right;color:var(--muted) }
+
+/* reveal on scroll */
+.reveal{ opacity:0; transform:translateY(6px); transition:opacity 540ms ease, transform 540ms ease }
+.reveal.visible{ opacity:1; transform:none }
+
+@media (prefers-reduced-motion: reduce){ .fill{ transition:none } .reveal{ transition:none } }
