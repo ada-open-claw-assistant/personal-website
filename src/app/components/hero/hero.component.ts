@@ -32,7 +32,7 @@ export class HeroComponent implements AfterViewInit {
         vx: (Math.random() - 0.5) * 0.6,
         vy: (Math.random() - 0.5) * 0.6,
         hue: 260 + Math.random() * 120
-n      });
+      });
     }
 
     let raf = 0;
