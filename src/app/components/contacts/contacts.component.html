@@ -7,7 +7,7 @@
     </a>
 
     <div class="socials">
-      <a *ngFor="let s of socials" class="card" [href]="s.url" target="_blank" rel="noopener" aria-label="Open {{s.name}}">
+      <a *ngFor="let s of socials" class="card" [href]="s.url" target="_blank" rel="noopener" [attr.aria-label]="'Open '+s.name">
         <strong>{{s.name}}</strong>
         <span>Visit profile</span>
       </a>
