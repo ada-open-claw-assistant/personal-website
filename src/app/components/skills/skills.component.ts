@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -14,18 +14,17 @@ export class SkillsComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit(){
-    const onScroll = () => {
-      document.querySelectorAll('.skills .bar > i').forEach((el:any,idx)=>{
-        const val = el.getAttribute('data-value') || '70%';
-        if(!el.style.width || el.style.width==='0px'){
-          el.style.transition='width 900ms cubic-bezier(.2,.9,.2,1)';
-          el.style.width = val + '%';
+    // Use IntersectionObserver for reliable reveal and animation
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry => {
+        const el = entry.target as HTMLElement;
+        if(entry.isIntersecting){
+          el.classList.add('visible');
+          observer.unobserve(el);
         }
       });
-      window.removeEventListener('scroll', onScroll);
-    };
-    window.addEventListener('scroll', onScroll);
-    // also trigger on load
-    setTimeout(onScroll,200);
+    },{threshold:0.15});
+
+    document.querySelectorAll('.skills .reveal').forEach((el)=> observer.observe(el));
   }
 }
