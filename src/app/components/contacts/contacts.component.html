@@ -1,0 +1,7 @@
+<section class="contacts" id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">Contact</h2>
+  <p>Email: <a [href]="'mailto:'+email">{{email}}</a></p>
+  <div class="socials">
+    <a *ngFor="let s of socials" [href]="s.url" target="_blank" rel="noopener">{{s.name}}</a>
+  </div>
+</section>

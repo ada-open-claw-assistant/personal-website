@@ -1,0 +1,13 @@
+<section class="skills" id="skills" aria-labelledby="skills-title">
+  <h2 id="skills-title">Skills</h2>
+  <div class="chips">
+    <span *ngFor="let s of skills" class="chip">{{s.name}}</span>
+  </div>
+  <div class="bars">
+    <div *ngFor="let s of skills" class="bar-row">
+      <div class="label">{{s.name}}</div>
+      <div class="bar" aria-hidden="true"><div class="fill" [style.width.%]="s.level"></div></div>
+      <div class="percent">{{s.level}}%</div>
+    </div>
+  </div>
+</section>
